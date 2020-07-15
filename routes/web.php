@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/login', function () {
+    $name = request('name');
+
+    return view('login', [
+        'name' => $name
+    ]);
+});
+
+Route::get('listing/{listing_id}', 'ListingController@show');
