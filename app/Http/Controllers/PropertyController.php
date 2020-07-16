@@ -75,7 +75,22 @@ class PropertyController extends Controller
         on comments.user_id = users.id
         where property_id = :id', ['id' => $id]);
 
-        return view('feed.index', ['properties' => $properties, 'rooms' => $rooms, 'features' => $features, 'comments' => $comments]);
+        $owners = DB::select('select users.fname, users.lname, users.id
+        from users
+        inner join properties
+        on users.id = properties.user_id
+        where properties.id = :id', ['id' => $id]);
+
+        $similars = DB::select('select p.id, p.community, p.parish, min(r.rent) as min_rent, max(r.rent) as max_rent, max(r.beds) as max_beds, r.bathroom, g.img_url
+        from properties as p
+        inner join rooms as r
+        on p.id = r.property_id
+        left join gallery as g
+        on g.property_id = p.id
+        group by p.id
+        order by rand() limit 3');
+
+        return view('feed.index', ['properties' => $properties, 'rooms' => $rooms, 'features' => $features, 'comments' => $comments, 'owners' => $owners, 'similars' => $similars]);
     }
 
     /**

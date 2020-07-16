@@ -1,98 +1,103 @@
 .container.minicontainer {
-  width: 600px;
+    width: 600px;
 }
 
 .sagi-green {
-  background-color: #84BD00;
+    background-color: #84bd00;
+}
+
+.sagi-green-text {
+    color: #84bd00;
 }
 
 .navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cg data-name='Layer 2'%3e%3cg data-name='menu-2'%3e%3crect width='24' height='24' transform='rotate(180 12 12)' opacity='0'/%3e%3ccircle cx='4' cy='12' r='1'/%3e%3crect x='7' y='11' width='14' height='2' rx='.94' ry='.94'/%3e%3crect x='3' y='16' width='18' height='2' rx='.94' ry='.94'/%3e%3crect x='3' y='6' width='18' height='2' rx='.94' ry='.94'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e");
-  /*filter: invert(1);*/
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cg data-name='Layer 2'%3e%3cg data-name='menu-2'%3e%3crect width='24' height='24' transform='rotate(180 12 12)' opacity='0'/%3e%3ccircle cx='4' cy='12' r='1'/%3e%3crect x='7' y='11' width='14' height='2' rx='.94' ry='.94'/%3e%3crect x='3' y='16' width='18' height='2' rx='.94' ry='.94'/%3e%3crect x='3' y='6' width='18' height='2' rx='.94' ry='.94'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e");
+    /*filter: invert(1);*/
 }
 
 .overbg {
-  /*background-image: url("../../assets/img/test.jpg");*/
-  /*background-size: cover;*/
-  /*background-repeat: no-repeat;*/
+    /*background-image: url("../../assets/img/test.jpg");*/
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
 }
 
 mob {
-  padding: 2em;
+    padding: 2em;
 }
 
 @media (max-width: 450px) {
-  .mob {
-    padding: 1.5em;
-  }
+    .mob {
+        padding: 1.5em;
+    }
 }
 
 @media (max-width: 450px) {
-  .dynamic-bg {
-    background-color: white;
-  }
+    .dynamic-bg {
+        background-color: white;
+    }
 }
 
 @media (min-width: 450px) {
-  .dynamic-bg {
-    background-image: url("../../assets/img/main-splash.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    background-attachment: fixed;
-  }
+    .dynamic-bg {
+        background-image: url("../../assets/img/main-splash.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        background-attachment: fixed;
+    }
 }
 
-body, .sticky-footer-wrapper {
-  min-height: 100vh;
+body,
+.sticky-footer-wrapper {
+    min-height: 100vh;
 }
 
 .flex-fill {
-  /*flex: 1 1 auto;*/
+    /*flex: 1 1 auto;*/
 }
 
 footer {
-  background-color: black;
+    background-color: black;
 }
 
 @media (min-width: 576px) {
-  .shadow2 {
-    box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-  }
+    .shadow2 {
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+    }
 }
 
 @media (min-width: 768px) {
-  .shadow2 {
-    -webkit-box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) !important;
-    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) !important;
-  }
+    .shadow2 {
+        -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
 }
 
 .home-thumb {
-  background-color: rgb(150, 168, 226);
-  /*background-image: url("../../assets/img/thumb-test.png");*/
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 200px;
+    background-color: rgb(150, 168, 226);
+    /*background-image: url("../../assets/img/thumb-test.png");*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
 }
 
 img {
-  border: none;
+    border: none;
 }
 
 .bg-light {
-  background-color: #e4ecf5 !important;
+    background-color: #e4ecf5 !important;
 }
 
 @media (min-width: 768px) {
-  .react-position {
-    /*position: fixed;*/
-  }
+    .react-position {
+        /*position: fixed;*/
+    }
 }
 
 .primary-filter {
-  filter: invert(49%) sepia(97%) saturate(3835%) hue-rotate(196deg) brightness(95%) contrast(87%);
+    filter: invert(49%) sepia(97%) saturate(3835%) hue-rotate(196deg)
+        brightness(95%) contrast(87%);
 }
-

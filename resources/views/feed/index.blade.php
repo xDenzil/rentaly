@@ -15,7 +15,7 @@
                     <div class="position-relative">
                         <button class="btn btn-primary position-absolute rounded-circle mt-3 ml-3" type="button"
                             style="width: 40px; height: 40px;"><i class="fas fa-map-marker-alt"></i></button><span
-                            class="position-absolute px-4 py-2 bg-primary text-white rounded"
+                            class="position-absolute px-4 py-2 sagi-green text-white rounded"
                             style="bottom:0; right:15px; margin-bottom: -15px;">Listed:
                             {{$property->list_date}}</span><img class="card-img card-img d-block rounded-top"
                             src="../home_imgs/{{$property->img_url}}">
@@ -64,18 +64,24 @@
             </div>
             <div class="col-sm-12 col-md-4 p-0 m-0">
                 <div class="card rounded border-0 m-0 mb-4 m-md-2 m-lg-5"><button
-                        class="btn btn-primary rounded-circle mt-3 ml-3" type="button"
+                        class="btn btn-primary rounded-circle mt-3 ml-3 mx-auto" type="button"
                         style="width: 80px; height: 80px;"><i class="fas fa-user-circle"
                             style="font-size:2em;"></i></button>
+                    @foreach($owners as $owner)
                     <div class="card-body">
-                        <h4 class="card-title">Mr. Francis</h4>
-                        <h6 class="card-subtitle mb-2">876-123-4567</h6>
-                        <div class="d-flex flex-row justify-content-between align-items-center"><button
-                                class="btn btn-primary w-50 mr-2 rounded" type="button"><i
-                                    class="fa fa-envelope"></i>&nbsp; Email</button><button
-                                class="btn btn-primary w-50 rounded" type="button"><i class="fa fa-phone"></i>&nbsp;
-                                Call</button></div>
+                        <p class="m-0 p-0 text-primary">Owner</p>
+                        <h4 class="card-title">{{$owner->fname}} {{$owner->lname}}</h4>
+                        <h6 class="card-subtitle mb-2">{{$owner->id}}</h6>
+                        <div>
+                            <a class="btn btn-primary btn-block mr-2 rounded"
+                                href="https://wa.me/{{$owner->id}}?text=Good%20Day%2C%20I%20saw%20your%20property%20on%20Rentaly%20and%20I%27m%20interested%20in%20viewing."
+                                target="_blank"><i class="fa fa-whatsapp"></i>&nbsp; Whatsapp</a>
+
+                            <a class="btn btn-primary btn-block mr-2 rounded text-white" href="tel:{{$owner->id}}"
+                                target="_blank"><i class="fa fa-phone"></i>&nbsp;
+                                Call</a></div>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -90,7 +96,7 @@
                 <div class="card rounded m-2 border-0">
                     <div class="card-body">
                         <div class="d-flex flex-row justify-content-between">
-                            <h6>{{$comment->fname}} {{$comment->lname}}</h6><span class="text-primary">
+                            <h6>{{$comment->fname}} {{$comment->lname}}</h6><span class="text-warning">
 
                                 @for($i = 0; $i < $comment->rating; $i++)
                                     <i class="fa fa-star mr-1"></i>
@@ -115,51 +121,34 @@
     <div class="container">
         <h4 class="m-4">Similar Listings</h4>
         <div class="row p-md-4">
+
+            @foreach($similars as $similar)
             <div class="col-sm-12 col-md-4">
-                <div class="card rounded m-0 mb-2 border-0">
+                <div class="card rounded m-0 mb-2 border-0" style="cursor: pointer;"
+                    onclick="location.href='/feed/{{$similar->id}}'">
                     <div class="position-relative"><button
-                            class="btn btn-primary position-absolute rounded-circle mt-3 ml-3" type="button"
-                            style="width: 40px; height: 40px;"><i class="fas fa-map-marker-alt"></i></button><span
-                            class="position-absolute px-4 py-2 bg-primary text-white rounded"
-                            style="bottom:0; right:15px; margin-bottom: -15px;">$18,000 - $24,000</span><img
-                            class="home-thumb card-img card-img w-100 d-block rounded-top" style="height: 150px;"></div>
+                            class="btn btn-light position-absolute rounded-circle mt-3 ml-3" type="button"
+                            style="width: 40px; height: 40px;"><i
+                                class="fas fa-map-marker-alt text-primary"></i></button><span
+                            class="position-absolute px-4 py-2 sagi-green text-white rounded"
+                            style="bottom:0; right:15px; margin-bottom: -15px;">${{$similar->min_rent}} -
+                            ${{$similar->max_rent}}</span><img
+                            class="home-thumb card-img card-img w-100 d-block rounded-top"
+                            src="../home_imgs/{{$similar->img_url}}" style="height: 200px;"></div>
                     <div class="card-body">
-                        <h4 class="card-title">Mona Heights</h4>
-                        <h6 class="text-muted card-subtitle mb-2">Kingston</h6>
-                        <p class="flex-shrink-1 card-text">Single &amp; Shared Rooms</p>
+                        <h4 class="card-title">{{$similar->community}}</h4>
+                        <h6 class="text-muted card-subtitle mb-2">{{$similar->parish}}</h6>
+                        <p class="flex-shrink-1 card-text">
+                            @if($similar->max_beds > 1)
+                            Single &amp; Shared Rooms
+                            @else
+                            Single Rooms Only
+                            @endif
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-4">
-                <div class="card rounded m-0 mb-2 border-0">
-                    <div class="position-relative"><button
-                            class="btn btn-primary position-absolute rounded-circle mt-3 ml-3" type="button"
-                            style="width: 40px; height: 40px;"><i class="fas fa-map-marker-alt"></i></button><span
-                            class="position-absolute px-4 py-2 bg-primary text-white rounded"
-                            style="bottom:0; right:15px; margin-bottom: -15px;">$18,000 - $24,000</span><img
-                            class="home-thumb card-img card-img w-100 d-block rounded-top" style="height: 150px;"></div>
-                    <div class="card-body">
-                        <h4 class="card-title">Mona Heights</h4>
-                        <h6 class="text-muted card-subtitle mb-2">Kingston</h6>
-                        <p class="flex-shrink-1 card-text">Single &amp; Shared Rooms</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <div class="card rounded m-0 mb-2 border-0">
-                    <div class="position-relative"><button
-                            class="btn btn-primary position-absolute rounded-circle mt-3 ml-3" type="button"
-                            style="width: 40px; height: 40px;"><i class="fas fa-map-marker-alt"></i></button><span
-                            class="position-absolute px-4 py-2 bg-primary text-white rounded"
-                            style="bottom:0; right:15px; margin-bottom: -15px;">$18,000 - $24,000</span><img
-                            class="home-thumb card-img card-img w-100 d-block rounded-top" style="height: 150px;"></div>
-                    <div class="card-body">
-                        <h4 class="card-title">Mona Heights</h4>
-                        <h6 class="text-muted card-subtitle mb-2">Kingston</h6>
-                        <p class="flex-shrink-1 card-text">Single &amp; Shared Rooms</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
