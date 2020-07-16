@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PropertyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,19 @@ Route::get('/login', function () {
 });
 
 Route::get('listing/{listing_id}', 'ListingController@show');
+
+Route::get('/signup', function () {
+    return view('signup');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/feed', 'PropertyController@index');
+
+Route::get('/feed/{id}', 'PropertyController@show');

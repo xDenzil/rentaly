@@ -1,57 +1,49 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.mainlayout')
 
-        <title>Laravel</title>
+@section('title', 'Page Title')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+@section('content')
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
-    <link rel="stylesheet" href="{!! asset('assets/fonts/fontawesome-all.min.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/fonts/font-awesome.min.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/custom-styles.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/dh-card-image-left-dark.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/Navigation-with-Button.css') !!}">
-    <link rel="stylesheet" href="{!! asset('assets/css/styles.css') !!}">
-    </head>
-    <body>
-        <h1> Theme test </h1>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+<section
+    style="height: 100vh;background-color: #F1F9FF;background-image: url(&quot;assets/img/main-splash2.jpg&quot;);background-size: cover;background-repeat: no-repeat;">
+    <div class="container text-white" style="padding-top: 10vh;"><span class="mb-3 display-4 px-2">Connecting
+            students&nbsp;<br></span><span class="mb-3 display-4 px-2">and rooms,&nbsp;<br></span><span
+            class="mb-3 display-4 px-2">without the hassle.&nbsp;<br></span><button
+            class="btn btn-primary btn-lg px-5 mt-4" type="button" style="background-color: #84BD00; border: none;">Get
+            Started</button></div>
+</section>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+<section style="background-color: black;">
+    <div class="row d-flex flex-row">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 bg-primary" style="position: relative; margin-top:-100px;">
+            <div class="row d-flex flex-row">
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 bg-primary"
+                    style="position: relative; margin-top:-100px;"></div>
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 p-5 bg-white">
+                    <div class="container">
+                        <h2>For Home Owners</h2>
+                        <div class="row p-3">
+                            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 p-0">
+                                <p>Have your rooms rented as quickly as it becomes available, no more lengthy gaps
+                                    between finding students.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 text-white p-5" style="background-color: #84BD00;">
+            <div class="container">
+                <h2>For Students</h2>
+                <div class="row p-3">
+                    <div class="col-12 p-0">
+                        <p>Find the exact room you're looking for, with little to no effort. Get updates as soon as a
+                            match is found.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@endsection
