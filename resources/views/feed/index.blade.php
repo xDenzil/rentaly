@@ -19,7 +19,7 @@
                             class="position-absolute px-4 py-2 sagi-green text-white rounded"
                             style="bottom:0; right:15px; margin-bottom: -15px;">Listed:
                             {{$property->list_date}}</span><img class="card-img card-img d-block rounded-top"
-                            src="../home_imgs/{{$property->img_url}}">
+                            src="../home_imgs/{{$property->thumb_img}}">
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">{{$property->community}}, {{$property->parish}}</h4>
@@ -56,9 +56,24 @@
                         </div>
                         <h4 class="card-title mt-3">Photos</h4>
                         <div class="d-flex flex-row flex-wrap mb-2 p-2">
-                            <img class="bg-light mr-2 mb-2 rounded" style="height: 120px; width: 120px;">
-                            <img class="bg-light mr-2 mb-2 rounded" style="height: 120px; width: 120px;">
-                            <img class="bg-light mr-2 mb-2 rounded" style="height: 120px; width: 120px;">
+
+                            @foreach($galleries as $gallery)
+                            <img id="myImg" class="fit mr-2 mb-2 rounded" src="../home_imgs/{{$gallery->img_url}}">
+                            @endforeach
+
+                            <!-- The Modal -->
+                            <div id="myModal" class="modal">
+
+                                <!-- The Close Button -->
+                                <span class="close">&times;</span>
+
+                                <!-- Modal Content (The Image) -->
+                                <img class="modal-content" id="img01">
+
+                            </div>
+
+
+
                         </div>
                     </div>
                 </div>
@@ -135,7 +150,7 @@
                             style="bottom:0; right:15px; margin-bottom: -15px;">${{$similar->min_rent}} -
                             ${{$similar->max_rent}}</span><img
                             class="home-thumb card-img card-img w-100 d-block rounded-top"
-                            src="../home_imgs/{{$similar->img_url}}" style="height: 200px;"></div>
+                            src="../home_imgs/{{$similar->thumb_img}}" style="height: 200px;"></div>
                     <div class="card-body">
                         <h4 class="card-title">{{$similar->community}}</h4>
                         <h6 class="text-muted card-subtitle mb-2">{{$similar->parish}}</h6>
@@ -154,5 +169,31 @@
     </div>
 </section>
 @endforeach
+
+
+
+<script>
+    // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+
+</script>
 
 @endsection

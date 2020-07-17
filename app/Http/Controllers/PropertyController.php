@@ -15,7 +15,7 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $properties = DB::select('select p.id, p.community, p.parish, min(r.rent) as min_rent, max(r.rent) as max_rent, max(r.beds) as max_beds, r.bathroom, g.img_url
+        $properties = DB::select('select p.id, p.community, p.parish, min(r.rent) as min_rent, max(r.rent) as max_rent, max(r.beds) as max_beds, r.bathroom, g.img_url, p.thumb_img
         from properties as p
         inner join rooms as r
         on p.id = r.property_id
@@ -55,10 +55,8 @@ class PropertyController extends Controller
      */
     public function show($id)
     {
-        $properties = DB::select('select p.community, p.parish, p.id, p.list_date, g.img_url, p.description
+        $properties = DB::select('select p.community, p.parish, p.id, p.list_date, p.description, p.thumb_img
         from properties as p
-        inner join gallery as g
-        on p.id = g.property_id
         where p.id = :id', ['id' => $id]);
 
         $rooms = DB::select('select * from rooms where status = :status and property_id = :id', ['id' => $id, 'status' => 'vacant']);
@@ -81,16 +79,20 @@ class PropertyController extends Controller
         on users.id = properties.user_id
         where properties.id = :id', ['id' => $id]);
 
-        $similars = DB::select('select p.id, p.community, p.parish, min(r.rent) as min_rent, max(r.rent) as max_rent, max(r.beds) as max_beds, r.bathroom, g.img_url
+        $galleries = DB::select('select * from gallery where property_id = :id', ['id' => $id]);
+
+        $similars = DB::select('select p.id, p.community, p.parish, min(r.rent) as min_rent, max(r.rent) as max_rent, max(r.beds) as max_beds, r.bathroom, p.thumb_img
         from properties as p
         inner join rooms as r
         on p.id = r.property_id
-        left join gallery as g
-        on g.property_id = p.id
+        where p.id <> :id
         group by p.id
-        order by rand() limit 3');
+        order by rand() limit 3', ['id' => $id]);
 
-        return view('feed.index', ['properties' => $properties, 'rooms' => $rooms, 'features' => $features, 'comments' => $comments, 'owners' => $owners, 'similars' => $similars]);
+        return view('feed.index', [
+            'properties' => $properties, 'rooms' => $rooms, 'features' => $features,
+            'comments' => $comments, 'owners' => $owners, 'similars' => $similars, 'galleries' => $galleries
+        ]);
     }
 
     /**

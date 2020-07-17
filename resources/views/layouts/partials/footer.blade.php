@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row mb-4">
             <div class="col-sm-12 col-md-6">
-                <h2 class="text-white">Contact</h2>
+                <h2 class="text-white">Rentaly</h2>
                 <p class="mt-3 text-muted">For any enquires about this concept, you may email tema Byte Size, Smart
                     Society Innovation Challenge participants.<br><br>237 Old Hope Rd,<br>Kingston Jamaica</p>
             </div>

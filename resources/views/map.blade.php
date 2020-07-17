@@ -8,29 +8,29 @@
 
 
 <div style="height:80vh; position: relative">
-    <div id="map" class="bg-primary" style="height:100%">
-    </div>
-    @foreach($users as $user)
-    <footer class="p-4 bg-primary w-50" style="position: absolute; bottom: 0;">
-        <div class="container">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-sm-6 col-md-9 text-white">
-                    <p class="m-0 p-0 text-white">Owner</p>
-                    <h3>{{$user->fname}} {{$user->lname}}</h3>
-                </div>
-            </div>
-            <div class="col-sm-12 p-0">
-
-                <a class="btn sagi-green btn-block mr-2 text-white rounded"
-                    href="https://wa.me/{{$user->id}}?text=Good%20Day%2C%20I%20saw%20your%20property%20on%20Rentaly%20and%20I%27m%20interested%20in%20viewing."
-                    target="_blank"><i class="fa fa-whatsapp"></i>&nbsp; Whatsapp</a>
-
-                <a class="btn sagi-green btn-block mr-2 rounded text-white" href="tel:{{$user->id}}" target="_blank"><i
-                        class="fa fa-phone"></i>&nbsp;
-                    Call</a>
-
-            </div>
+  <div id="map" class="bg-primary" style="height:100%">
+  </div>
+  @foreach($users as $user)
+  <footer class="p-4 bg-primary w-50" style="position: absolute; bottom: 0;">
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-sm-6 col-md-9 text-white">
+          <p class="m-0 p-0 text-white">Owner</p>
+          <h3>{{$user->fname}} {{$user->lname}}</h3>
         </div>
+      </div>
+      <div class="col-sm-12 p-0">
+
+        <a class="btn sagi-green btn-block mr-2 text-white rounded"
+          href="https://wa.me/{{$user->id}}?text=Good%20Day%2C%20I%20saw%20your%20property%20on%20Rentaly%20and%20I%27m%20interested%20in%20viewing."
+          target="_blank"><i class="fa fa-whatsapp"></i>&nbsp; Whatsapp</a>
+
+        <a class="btn sagi-green btn-block mr-2 rounded text-white" href="tel:{{$user->id}}" target="_blank"><i
+            class="fa fa-phone"></i>&nbsp;
+          Call</a>
+
+      </div>
+    </div>
 </div>
 </footer>
 @endforeach
@@ -48,11 +48,11 @@ $long = $xml->result->geometry->location->lng;
 
 
 <script
-    src="https://maps.googleapis.com/maps/api/js?key=<?php echo env('MAPS_API_KEY', false) ?>&callback=initMap&libraries=&v=weekly"
-    defer></script>
+  src="https://maps.googleapis.com/maps/api/js?key=<?php echo env('MAPS_API_KEY', false) ?>&callback=initMap&libraries=&v=weekly"
+  defer></script>
 
 <script>
-    (function(exports) {
+  (function(exports) {
   "use strict";
 
   function initMap() {
@@ -96,4 +96,5 @@ $long = $xml->result->geometry->location->lng;
   exports.initMap = initMap;
 })((this.window = this.window || {}));
 </script>
+
 @endsection

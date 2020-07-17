@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('index');
 });
@@ -48,3 +49,5 @@ Route::get('/feed', 'PropertyController@index');
 Route::get('/feed/{id}', 'PropertyController@show');
 
 Route::get('/map/{prop_id}', 'MapController@show');
+
+Route::get('/map', 'MapController@index');

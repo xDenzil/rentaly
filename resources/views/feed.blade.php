@@ -45,7 +45,7 @@
                             style="bottom:0; right:15px; margin-bottom: -15px;">${{$property->min_rent}} -
                             ${{$property->max_rent}}</span><img
                             class="home-thumb card-img card-img w-100 d-block rounded-top"
-                            src="home_imgs/{{$property->img_url}}">
+                            src="home_imgs/{{$property->thumb_img}}">
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">{{$property->community}}</h4>
