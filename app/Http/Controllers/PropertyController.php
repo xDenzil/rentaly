@@ -61,7 +61,7 @@ class PropertyController extends Controller
         on p.id = g.property_id
         where p.id = :id', ['id' => $id]);
 
-        $rooms = DB::select('select * from rooms where property_id = :id', ['id' => $id]);
+        $rooms = DB::select('select * from rooms where status = :status and property_id = :id', ['id' => $id, 'status' => 'vacant']);
 
         $features = DB::select('select features.tag 
         from features 
@@ -125,5 +125,21 @@ class PropertyController extends Controller
     public function destroy(Property $property)
     {
         //
+    }
+
+    public function manage($user_id)
+    {
+        $rooms = DB::select('select (@cnt := @cnt + 1) AS room_number, bathroom, kitchen, rent, rooms.status, beds, users.id, properties.id as prop_id
+        from rooms
+        CROSS JOIN (SELECT @cnt := 0) as dummy
+        inner join properties 
+        on rooms.property_id = properties.id
+        inner join users
+        on users.id = properties.user_id
+        where user_id = :uid', ['uid' => $user_id]);
+
+        $properties = DB::select('select * from properties where user_id = :id', ['id' => $user_id]);
+
+        return view('dashboard', ['rooms' => $rooms, 'properties' => $properties]);
     }
 }

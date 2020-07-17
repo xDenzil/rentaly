@@ -13,8 +13,9 @@
             <div class="col-sm-12 col-md-8 m-0 p-0">
                 <div class="card rounded border-0 m-0 mb-4 m-md-2 m-lg-5">
                     <div class="position-relative">
-                        <button class="btn btn-primary position-absolute rounded-circle mt-3 ml-3" type="button"
-                            style="width: 40px; height: 40px;"><i class="fas fa-map-marker-alt"></i></button><span
+                        <a class="btn btn-primary position-absolute rounded-circle mt-3 ml-3"
+                            href="/map/{{$property->id}}" style="width: 40px; height: 40px;"><i
+                                class="fas fa-map-marker-alt"></i></a><span
                             class="position-absolute px-4 py-2 sagi-green text-white rounded"
                             style="bottom:0; right:15px; margin-bottom: -15px;">Listed:
                             {{$property->list_date}}</span><img class="card-img card-img d-block rounded-top"

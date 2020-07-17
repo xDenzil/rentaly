@@ -36,6 +36,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
+
+Route::get('/manage/{user_id}', 'PropertyController@manage');
+
 Route::get('/profile', function () {
     return view('profile');
 });
@@ -43,3 +46,5 @@ Route::get('/profile', function () {
 Route::get('/feed', 'PropertyController@index');
 
 Route::get('/feed/{id}', 'PropertyController@show');
+
+Route::get('/map/{prop_id}', 'MapController@show');
