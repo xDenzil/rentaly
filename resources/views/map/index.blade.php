@@ -87,17 +87,38 @@
       "description": '<h4><a href="/feed/ZKY35">ZKY35</a></h4> Single and Shared Rooms available. $24,000 - $36,000.'
   }
   ];
-  window.onload = function () {
-      LoadMap();
-  }
-  function LoadMap() {
+
+  function initMap() {
+    var la;
+    var lo;
+
+    navigator.geolocation.getCurrentPosition(function(p) {
+        var LatLng = new google.maps.LatLng(
+            p.coords.latitude,
+            p.coords.longitude
+        );
+        la = p.coords.latitude;
+        lo = p.coords.longitude;
+        console.log(lo);
+
+        var cityCircle = new google.maps.Circle({
+            strokeColor: "#2780E3",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "#2780E3",
+            fillOpacity: 0.15,
+            map: map,
+            center: LatLng,
+            radius: 1000
+        });
+    });
+
       var mapOptions = {
           center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
-          zoom: 8,
+          zoom: 15,
           mapTypeId: google.maps.MapTypeId.ROADMAP
       };
       var infoWindow = new google.maps.InfoWindow();
-      var latlngbounds = new google.maps.LatLngBounds();
       var map = new google.maps.Map(document.getElementById("map"), mapOptions);
       
 
@@ -115,11 +136,8 @@
                   infoWindow.open(map, marker);
               });
           })(marker, data);
-          latlngbounds.extend(marker.position);
+
       }
-      var bounds = new google.maps.LatLngBounds();
-      map.setCenter(latlngbounds.getCenter());
-      map.fitBounds(latlngbounds);
   }
   
 

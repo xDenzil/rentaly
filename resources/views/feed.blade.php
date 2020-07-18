@@ -11,8 +11,10 @@
             <div class="card-body">
                 <form
                     class="d-flex flex-row justify-content-between flex-wrap flex-sm-wrap flex-md-wrap flex-lg-nowrap flex-xl-nowrap">
-                    <button class="btn btn-light m-2 rounded" type="button">Single Room</button><button
-                        class="btn btn-primary m-2 rounded" type="button">Shared Room</button><button
+                    <a class="btn btn-primary m-2 rounded" href="/map"><i
+                            class="fas fa-map-marker-alt text-white mr-2"></i>Find Near
+                        Me</a><button class="btn btn-light m-2 rounded" type="button">Shared Room</button><button
+                        class="btn btn-light m-2 rounded" type="button">Studio</button><button
                         class="btn btn-light m-2 rounded" type="button">Studio</button>
                     <input class="form-control align-items-start m-2 rounded" type="text" placeholder="Where?">
                     <div class="input-group align-items-start m-2">
@@ -22,8 +24,8 @@
                     <div class="input-group align-items-start m-2">
                         <div class="input-group-prepend"><span class="input-group-text rounded-left">$</span></div>
                         <input class="form-control rounded-right" type="text" placeholder="Max Price">
-                    </div><button class="btn btn-primary m-2 rounded" type="button">Reset Filter</button>
-                    <button class="btn text-white m-2 rounded sagi-green" type="button">Search</button>
+                    </div>
+                    <button class="btn text-white m-2 rounded sagi-green" type="button">Search Homes</button>
                 </form>
             </div>
         </div>

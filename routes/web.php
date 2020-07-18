@@ -51,3 +51,40 @@ Route::get('/feed/{id}', 'PropertyController@show');
 Route::get('/map/{prop_id}', 'MapController@show');
 
 Route::get('/map', 'MapController@index');
+
+
+
+/*   Registration  */
+
+
+Route::get('/register', function () {
+    return view('register.index');
+});
+
+Route::get('/register/u/interests', function () {
+    return view('register.user.interests');
+});
+
+Route::get('/register/u/completed', function () {
+    return view('register.user.completed');
+});
+
+Route::get('/register/o/add-rooms', function () {
+    return view('register.owner.add-rooms');
+});
+
+Route::get('/register/o/completed', function () {
+    return view('register.owner.completed');
+});
+
+Route::get('/register/o/create-listing', function () {
+    return view('register.owner.create-listing');
+});
+
+Route::get('/register/o/new-property', function () {
+    return view('register.owner.new-property');
+});
+
+Route::get('/register/o/property-details', function () {
+    return view('register.owner.property-details');
+});
