@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PropertyController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,11 @@ Route::get('/map/{prop_id}', 'MapController@show');
 
 Route::get('/map', 'MapController@index');
 
+Route::get('/logout', function (Request $request) {
+
+    $request->session()->flush();
+    return redirect('/');
+});
 
 
 /*   Registration  */
@@ -88,3 +94,7 @@ Route::get('/register/o/new-property', function () {
 Route::get('/register/o/property-details', function () {
     return view('register.owner.property-details');
 });
+
+Route::get('/signin', 'LoginController@index');
+
+Route::post('/signin', 'LoginController@store');

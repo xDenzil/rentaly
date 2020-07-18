@@ -7,10 +7,11 @@
 @section('content')
 
 <div style="height:80vh; position: relative">
-  <div id="map" class="bg-primary" style="height:100%;">
+  <div id="map_canvas" class="bg-primary" style="height:100%;">
   </div>
-  <div class="position-absolute bg-primary rounded text-white p-3" style="bottom:5%; left: 5%; width: 300px;">
-    <h4>3 Properties Near You</h4>
+  <div class="position-absolute rounded text-white p-3"
+    style="bottom:5%; left: 5%; width: 300px; background-color:black;">
+    <h4>3 Active Properties Near You</h4>
     <p>Click their markers to see more.</p>
   </div>
 </div>
@@ -108,7 +109,8 @@
             fillColor: "#2780E3",
             fillOpacity: 0.15,
             map: map,
-            center: LatLng,
+            /*center: LatLng,*/
+            center: {lat: 18.017075, lng: -76.740784},
             radius: 1000
         });
     });
@@ -116,19 +118,66 @@
       var mapOptions = {
           center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
           zoom: 15,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          styles: [
+  {
+    "featureType": "poi",
+    "elementType": "labels.text",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.business",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  }
+] 
       };
       var infoWindow = new google.maps.InfoWindow();
-      var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+      var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
       
+      var image = new google.maps.MarkerImage(
+							'assets/img/blue_circle.png',
+							null, // size
+							null, // origin
+							new google.maps.Point( 8, 8 ), // anchor (move to center of marker)
+							new google.maps.Size( 20, 20 ) // scaled size (required for Retina display icon)
+						);
 
       for (var i = 0; i < markers.length; i++) {
           var data = markers[i]
           var myLatlng = new google.maps.LatLng(data.lat, data.lng);
           var marker = new google.maps.Marker({
-              position: myLatlng,
-              map: map,
-              title: data.title
+              flat: true,
+							icon: image,
+							map: map,
+							optimized: false,
+							position: myLatlng,
+							title: 'I might be here',
+							visible: true
           });
           (function (marker, data) {
               google.maps.event.addListener(marker, "click", function (e) {

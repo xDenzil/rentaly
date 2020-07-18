@@ -89,7 +89,7 @@ $long = $xml->result->geometry->location->lng;
         lat: <?php echo $lat ?>,
         lng: <?php echo $long ?>
       },
-              radius: 500
+              radius: 350
             });
   }
 
