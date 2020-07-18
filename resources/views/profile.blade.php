@@ -48,7 +48,7 @@
                 <div class="card rounded border-0 m-0 mb-4 m-md-2 m-lg-5">
                     <div class="card-body">
                         <h4 class="card-title">For You</h4>
-                        <h6 class="text-muted card-subtitle mb-2">Updated as at..</h6>
+                        <h6 class="text-muted card-subtitle mb-2">Updated as at 7/17/20 3:05:09</h6>
                         <div class="row p-2">
                             <div class="col-sm-12 col-md-6 p-0">
                                 <div class="card rounded m-2"><span
@@ -65,9 +65,9 @@
                             <div class="col-sm-12 col-md-6 p-0">
                                 <div class="card rounded m-2">
                                     <div class="card-body">
-                                        <h4 class="card-title">Mona Heights</h4>
+                                        <h4 class="card-title">Tavern</h4>
                                         <h6 class="text-muted card-subtitle mb-2">Kingston</h6>
-                                        <p class="flex-shrink-1 card-text">$20,000 - $32,000</p><button
+                                        <p class="flex-shrink-1 card-text">$18,000 - $22,000</p><button
                                             class="btn btn-primary rounded" type="button">View Property</button>
                                     </div>
                                 </div>

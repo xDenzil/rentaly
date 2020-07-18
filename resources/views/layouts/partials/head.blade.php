@@ -15,3 +15,4 @@
 <link rel="stylesheet" href="{{ URL::asset('assets/css/dh-card-image-left-dark.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('assets/css/Navigation-with-Button.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('assets/css/styles.css') }}">
+<script src="assets/js/markers.js"></script>

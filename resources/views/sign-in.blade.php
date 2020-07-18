@@ -16,7 +16,7 @@
             <div class="form-group"><input class="form-control mb-2" name="user-phone" type="text"
                     placeholder="Email or Phone Number">
             </div>
-            <div class="form-group"><input class="form-control mb-2" name="user-password" type="text"
+            <div class="form-group"><input class="form-control mb-2" name="user-password" type="password"
                     placeholder="Password"></div>
             <button class="btn btn-primary btn-block" type="submit" style="margin-top: 12px;">Sign In</button>
             <p class="text-center small mt-4">For got your password? <a href="#">Click Here</a></p>
