@@ -77,7 +77,7 @@
         la = p.coords.latitude;
         lo = p.coords.longitude;
         console.log(lo);
-
+/*
         var cityCircle = new google.maps.Circle({
             strokeColor: "#2780E3",
             strokeOpacity: 0.8,
@@ -86,9 +86,11 @@
             fillOpacity: 0.15,
             map: map,
             /*center: LatLng,*/
-            center: {lat: 18.017075, lng: -76.740784},
+            
+            /*center: {lat: 18.017075, lng: -76.740784},
             radius: 1000
-        });
+        });*/
+        
     });
 
       var mapOptions = {
@@ -134,6 +136,18 @@
       };
       var infoWindow = new google.maps.InfoWindow();
       var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+      var cityCircle = new google.maps.Circle({
+            strokeColor: "#2780E3",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "#2780E3",
+            fillOpacity: 0.15,
+            map: map,
+            /*center: LatLng,*/
+            center: {lat: 18.017075, lng: -76.740784},
+            radius: 1000
+        });
       
       var image = new google.maps.MarkerImage(
 							'assets/img/blue_circle.png',

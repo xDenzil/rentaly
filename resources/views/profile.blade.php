@@ -14,7 +14,7 @@
                         style="width: 80px; height: 80px;"><i class="fas fa-user-circle"
                             style="font-size:2em;"></i></button>
                     <div class="card-body">
-                        <h4 class="card-title">Denzil Williams</h4>
+                        <h4 class="card-title">Ricardo Simpson</h4>
                         <h6 class="card-subtitle mb-2">Member since&nbsp;</h6><span class="d-block mb-2"><a
                                 href="#">Notifications</a></span><span class="d-block mb-2"><a href="#">Change Email /
                                 Password</a></span><span class="d-block mb-2"><a href="#">Upgrade Account</a></span>
