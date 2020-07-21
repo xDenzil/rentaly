@@ -1,6 +1,6 @@
 @extends('layouts.mainlayout')
 
-@section('title','Property Name')
+@section('title','View Property')
 
 @section('body-class','bg-light')
 
@@ -142,10 +142,10 @@
             <div class="col-sm-12 col-md-4">
                 <div class="card rounded m-0 mb-2 border-0" style="cursor: pointer;"
                     onclick="location.href='/feed/{{$similar->id}}'">
-                    <div class="position-relative"><button
-                            class="btn btn-light position-absolute rounded-circle mt-3 ml-3" type="button"
+                    <div class="position-relative"><a href="/map/{{$similar->id}}"
+                            class="btn btn-light position-absolute rounded-circle mt-3 ml-3"
                             style="width: 40px; height: 40px;"><i
-                                class="fas fa-map-marker-alt text-primary"></i></button><span
+                                class="fas fa-map-marker-alt text-primary"></i></a><span
                             class="position-absolute px-4 py-2 sagi-green text-white rounded"
                             style="bottom:0; right:15px; margin-bottom: -15px;">${{$similar->min_rent}} -
                             ${{$similar->max_rent}}</span><img

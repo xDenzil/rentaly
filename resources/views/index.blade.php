@@ -1,6 +1,6 @@
-@extends('layouts.mainlayout')
+@extends('layouts.no-footer-layout')
 
-@section('title', 'Page Title')
+@section('title', 'Home')
 
 @section('content')
 
