@@ -97,9 +97,18 @@
     console.log(LatLng);
 
       var mapOptions = {
-          center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
+          /*center: new google.maps.LatLng(markers[0].lat, markers[0].lng),*/
           zoom: 15,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
+          streetViewControl: false,
+    streetViewControlOptions: {
+        position: google.maps.ControlPosition.LEFT_TOP
+    },
+    fullscreenControl: false,
+    zoomControl: true,
+    zoomControlOptions: {
+        position: google.maps.ControlPosition.RIGHT_TOP
+    },
           styles: [
   {
     "featureType": "poi",
