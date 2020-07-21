@@ -5,7 +5,7 @@
 @section('content')
 
 <section
-    style="height: 100vh;background-color: #F1F9FF;background-image: url(&quot;assets/img/main-splash2.jpg&quot;);background-size: cover;background-repeat: no-repeat;">
+    style="height: 100vh;background-color: #F1F9FF;background-image: url(&quot;assets/img/main-splash2-squashed.jpg&quot;);background-size: cover;background-repeat: no-repeat;">
     <div class="container text-white" style="padding-top: 10vh;"><span class="mb-3 display-4 px-2">Connecting
             students&nbsp;<br></span><span class="mb-3 display-4 px-2">and rooms,&nbsp;<br></span><span
             class="mb-3 display-4 px-2">without the hassle.&nbsp;<br></span><a class="btn btn-primary btn-lg px-5 mt-4"

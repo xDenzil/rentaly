@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div style="height:100vh; position: relative">
+<div style="height:92vh; position: relative">
   <div id="map_canvas" class="bg-primary" style="height:100%;">
   </div>
   <div class="position-absolute rounded text-white p-3"

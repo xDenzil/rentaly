@@ -7,7 +7,7 @@
 @section('content')
 
 
-<div style="height:100vh; position: relative">
+<div style="height:92vh; position: relative">
   <div id="map" class="bg-primary" style="height:100%">
   </div>
   @foreach($users as $user)

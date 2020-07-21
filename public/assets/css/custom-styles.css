@@ -39,7 +39,7 @@
 
 @media (min-width: 450px) {
     .dynamic-bg {
-        background-image: url("../../assets/img/main-splash.jpg");
+        background-image: url("../../assets/img/main-splash-squashed.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         height: 100vh;
