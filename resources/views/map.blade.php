@@ -1,6 +1,6 @@
-@extends('layouts.mainlayout')
+@extends('layouts.no-footer-layout')
 
-@section('title', 'Property Name')
+@section('title', 'Near Me')
 
 @section('body-class','bg-light')
 

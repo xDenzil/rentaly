@@ -1,4 +1,4 @@
-@extends('layouts.no-footer-layout')
+@extends('layouts.mainlayout')
 
 @section('title', 'Home')
 
