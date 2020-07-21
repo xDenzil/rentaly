@@ -1,12 +1,12 @@
-@extends('layouts.mainlayout')
+@extends('layouts.no-footer-layout')
 
-@section('title', 'Property Name')
+@section('title', 'Near Me')
 
 @section('body-class','bg-light')
 
 @section('content')
 
-<div style="height:80vh; position: relative">
+<div style="height:100vh; position: relative">
   <div id="map_canvas" class="bg-primary" style="height:100%;">
   </div>
   <div class="position-absolute rounded text-white p-3"

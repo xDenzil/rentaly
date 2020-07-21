@@ -1,13 +1,13 @@
 @extends('layouts.no-footer-layout')
 
-@section('title', 'Near Me')
+@section('title', 'Property Location')
 
 @section('body-class','bg-light')
 
 @section('content')
 
 
-<div style="height:80vh; position: relative">
+<div style="height:100vh; position: relative">
   <div id="map" class="bg-primary" style="height:100%">
   </div>
   @foreach($users as $user)
