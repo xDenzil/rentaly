@@ -9,10 +9,9 @@
 <div style="height:92vh; position: relative">
   <div id="map_canvas" class="bg-primary" style="height:100%;">
   </div>
-  <div class="position-absolute rounded text-white p-3"
+  <div id="status-box" class="position-absolute rounded text-white p-3"
     style="bottom:5%; left: 5%; width: 300px; background-color:black;">
-    <h4>3 Active Properties Near You</h4>
-    <p>Click their markers to see more.</p>
+    <h4>Searching..</h4>
   </div>
 </div>
 
@@ -74,6 +73,8 @@
             p.coords.latitude,
             p.coords.longitude
         );
+
+        
         la = p.coords.latitude;
         lo = p.coords.longitude;
 
@@ -158,7 +159,9 @@
 							new google.maps.Point( 8, 8 ), // anchor (move to center of marker)
 							new google.maps.Size( 20, 20 ) // scaled size (required for Retina display icon)
 						);
-
+            
+            
+            setTimeout(function(){  
       for (var i = 0; i < markers.length; i++) {
           var data = markers[i]
           var myLatlng = new google.maps.LatLng(data.lat, data.lng);
@@ -178,7 +181,10 @@
               });
           })(marker, data);
 
-      }
+          document.getElementById("status-box").innerHTML = "<h4>3 Active Properties Near You</h4>"
+          document.getElementById("status-box").innerHTML += "<p>Click their markers to see more.</p>";
+
+      } }, 3000);
   }
   
 
