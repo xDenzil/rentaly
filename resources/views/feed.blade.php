@@ -41,13 +41,19 @@
                     onclick="location.href='feed/{{$property->id}}'">
                     <div class=" position-relative"><a class="btn bg-white position-absolute rounded-circle mt-3 ml-3"
                             href="/map/{{$property->id}}" style="width: 40px; height: 40px;"><i
-                                class="fas fa-map-marker-alt"></i></a><span
-                            class="position-absolute px-4 py-2 bg-primary text-white rounded"
+                                class="fas fa-map-marker-alt"></i></a>
+                        @if($property->vr == 1)
+                        <a href="/vr/{{$property->id}}" class="position-absolute px-4 bg-danger py-2 text-white rounded"
+                            style="bottom:0; right:15px; margin-bottom: -60px; text-decoration:none;">VR</a>
+                        @endif
+
+                        <span class="position-absolute px-4 py-2 bg-primary text-white rounded"
                             style="bottom:0; right:15px; margin-bottom: -15px;">${{$property->min_rent}} -
                             ${{$property->max_rent}}</span><img
                             class="home-thumb card-img card-img w-100 d-block rounded-top"
                             src="home_imgs/{{$property->thumb_img}}">
                     </div>
+
                     <div class="card-body">
                         <h4 class="card-title">{{$property->community}}</h4>
                         <h6 class="text-muted card-subtitle mb-2">{{$property->parish}}</h6>

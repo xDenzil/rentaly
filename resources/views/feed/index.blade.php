@@ -18,8 +18,14 @@
                                 class="fas fa-map-marker-alt"></i></a><span
                             class="position-absolute px-4 py-2 sagi-green text-white rounded"
                             style="bottom:0; right:15px; margin-bottom: -15px;">Listed:
-                            {{$property->list_date}}</span><img class="card-img card-img d-block rounded-top"
-                            src="../home_imgs/{{$property->thumb_img}}">
+                            {{$property->list_date}}</span>
+
+                        @if($property->vr == 1)
+                        <a href="/vr/{{$property->id}}" class="position-absolute px-4 bg-danger py-2 text-white rounded"
+                            style="bottom:0; right:15px; margin-bottom: -60px; text-decoration:none;">VR</a>
+                        @endif
+
+                        <img class="card-img card-img d-block rounded-top" src="../home_imgs/{{$property->thumb_img}}">
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">{{$property->community}}, {{$property->parish}}</h4>

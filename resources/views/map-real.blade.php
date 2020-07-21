@@ -61,22 +61,18 @@ $long = $xml->result->geometry->location->lng;
         lat: <?php echo $lat ?>,
         lng: <?php echo $long ?>
       },
-      zoom: 14
+      zoom: 14,
+
+      streetViewControl: false,
+    streetViewControlOptions: {
+        position: google.maps.ControlPosition.LEFT_TOP
+    },
+    fullscreenControl: false,
+    zoomControl: true,
+    zoomControlOptions: {
+        position: google.maps.ControlPosition.RIGHT_TOP
+    }
     });
-    /*var rectangle = new google.maps.Rectangle({
-            strokeColor: "#84bd00",
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillColor: "#84bd00",
-            fillOpacity: 0.35,
-            map: map,
-            bounds: {
-              north: 18.0316302,
-              south: 18.0183858,
-              east: -76.7636311,
-              west: -76.7817502
-            }
-          });*/
 
           var cityCircle = new google.maps.Circle({
               strokeColor: "#84bd00",

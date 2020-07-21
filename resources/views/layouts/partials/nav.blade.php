@@ -14,8 +14,8 @@
                 <li class="nav-item"><a href="/logout" class="nav-link text-primary">Logout</a></li>
 
                 @elseif(session('user_phone')=='')
-                <a href="/signin" class="nav-link">Log In</a></li>
-                <a href="/register" class="border border-primary text-primary nav-link">Sign Up</a></li>
+                <a href="/signin" class="nav-link">Log In</a>
+                <a href="/register" class="border border-primary text-primary nav-link">Sign Up</a>
 
                 @else
                 <li class="nav-item"><a href="/profile" class="nav-link">My Profile</a></li>

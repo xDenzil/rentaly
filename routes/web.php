@@ -51,6 +51,11 @@ Route::get('/feed/{id}', 'PropertyController@show');
 
 Route::get('/map/{prop_id}', 'MapController@show');
 
+Route::get('/vr/{prop_id}', function ($prop_id) {
+
+    return view('vr', ['prop_id' => $prop_id]);
+});
+
 Route::get('/map', 'MapController@index');
 
 Route::get('/logout', function (Request $request) {

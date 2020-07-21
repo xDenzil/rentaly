@@ -15,7 +15,7 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $properties = DB::select('select p.id, p.community, p.parish, min(r.rent) as min_rent, max(r.rent) as max_rent, max(r.beds) as max_beds, r.bathroom, g.img_url, p.thumb_img
+        $properties = DB::select('select p.id, p.community, p.parish, p.vr, min(r.rent) as min_rent, max(r.rent) as max_rent, max(r.beds) as max_beds, r.bathroom, g.img_url, p.thumb_img
         from properties as p
         inner join rooms as r
         on p.id = r.property_id
@@ -55,7 +55,7 @@ class PropertyController extends Controller
      */
     public function show($id)
     {
-        $properties = DB::select('select p.community, p.parish, p.id, p.list_date, p.description, p.thumb_img
+        $properties = DB::select('select p.community, p.parish, p.id, p.list_date, p.description, p.thumb_img, p.vr
         from properties as p
         where p.id = :id', ['id' => $id]);
 
@@ -81,7 +81,7 @@ class PropertyController extends Controller
 
         $galleries = DB::select('select * from gallery where property_id = :id', ['id' => $id]);
 
-        $similars = DB::select('select p.id, p.community, p.parish, min(r.rent) as min_rent, max(r.rent) as max_rent, max(r.beds) as max_beds, r.bathroom, p.thumb_img
+        $similars = DB::select('select p.id, p.community, p.vr, p.parish, min(r.rent) as min_rent, max(r.rent) as max_rent, max(r.beds) as max_beds, r.bathroom, p.thumb_img
         from properties as p
         inner join rooms as r
         on p.id = r.property_id
