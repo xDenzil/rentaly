@@ -66,17 +66,18 @@
 
 <script type="text/javascript">
   function initMap() {
-    var la;
-    var lo;
+    
+    var LatLng = 'o';
 
     navigator.geolocation.getCurrentPosition(function(p) {
-        var LatLng = new google.maps.LatLng(
+        LatLng = new google.maps.LatLng(
             p.coords.latitude,
             p.coords.longitude
         );
         la = p.coords.latitude;
         lo = p.coords.longitude;
-        console.log(lo);
+
+        map.setCenter(LatLng);
 
         var cityCircle = new google.maps.Circle({
             strokeColor: "#2780E3",
@@ -90,6 +91,9 @@
         });
         
     });
+
+    console.log('ltlng:');
+    console.log(LatLng);
 
       var mapOptions = {
           center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
@@ -134,7 +138,7 @@
       };
       var infoWindow = new google.maps.InfoWindow();
       var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-
+    
 /*
       var cityCircle = new google.maps.Circle({
             strokeColor: "#2780E3",
