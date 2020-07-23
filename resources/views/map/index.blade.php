@@ -65,6 +65,23 @@
 
 <script type="text/javascript">
   function initMap() {
+
+    var markers = [
+    {
+        title: "Altamont Cres",
+        lat: "18.0041745",
+        lng: "-76.7880111",
+        description:
+            '<h4><a href="/feed/AMP59">AMP59</a></h4> Single and Shared Rooms available. $19,000 - $30,000.'
+    },
+    {
+        title: "Pawsey Road",
+        lat: "18.006788",
+        lng: "-76.7861211",
+        description:
+            '<h4><a href="/feed/ZKY35">ZKY35</a></h4> Single and Shared Rooms available. $24,000 - $36,000.'
+    }
+];
     
     var LatLng = 'o';
 
@@ -90,6 +107,7 @@
             center: LatLng,
             radius: 1000
         });
+        
         
     });
 
@@ -157,9 +175,10 @@
             fillColor: "#2780E3",
             fillOpacity: 0.15,
             map: map,
-            center: {lat: 18.017075, lng: -76.740784},
+            center: {lat: 18.0029051, lng: -76.790194},
             radius: 1000
-        });*/
+        });
+        */
       
       var image = new google.maps.MarkerImage(
 							'assets/img/blue_circle.png',
@@ -190,7 +209,7 @@
               });
           })(marker, data);
 
-          document.getElementById("status-box").innerHTML = "<h4>3 Active Properties Near You</h4>"
+          document.getElementById("status-box").innerHTML = "<h4>2 Active Properties Near You</h4>"
           document.getElementById("status-box").innerHTML += "<p>Click their markers to see more.</p>";
 
       } }, 3000);

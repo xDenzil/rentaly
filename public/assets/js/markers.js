@@ -1,22 +1,15 @@
 var markers = [
     {
-        title: "University Cres",
-        lat: "18.0142",
-        lng: "-76.7453",
+        title: "Altamont Cres",
+        lat: "18.0041745",
+        lng: "-76.7880111",
         description:
-            '<h4><a href="/feed/HHG63">HHG63</a></h4> Single and Shared Rooms available. $21,000 - $24,000.'
+            '<h4><a href="/feed/AMP59">AMP59</a></h4> Single and Shared Rooms available. $19,000 - $30,000.'
     },
     {
-        title: "Tavern",
-        lat: "18.0191",
-        lng: "-76.7408",
-        description:
-            '<h4><a href="/feed/QRT14">QRT14</a></h4> Single and Shared Rooms available. $12,000 - $28,000.'
-    },
-    {
-        title: "Mona",
-        lat: "18.0124",
-        lng: "-76.7481",
+        title: "Pawsey Rd",
+        lat: "18.0038188",
+        lng: "-76.7911852",
         description:
             '<h4><a href="/feed/ZKY35">ZKY35</a></h4> Single and Shared Rooms available. $24,000 - $36,000.'
     }
