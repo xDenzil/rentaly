@@ -43,7 +43,8 @@
                             href="/map/{{$property->id}}" style="width: 40px; height: 40px;"><i
                                 class="fas fa-map-marker-alt"></i></a>
                         @if($property->vr == 1)
-                        <a href="/vr/{{$property->id}}" class="position-absolute px-4 bg-danger py-2 text-white rounded"
+                        <a href="https://rentaly-vrroomdemo.herokuapp.com"
+                            class="position-absolute px-4 bg-danger py-2 text-white rounded"
                             style="bottom:0; right:15px; margin-bottom: -60px; text-decoration:none;">VR</a>
                         @endif
 
