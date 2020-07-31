@@ -209,7 +209,7 @@
               });
           })(marker, data);
 
-          document.getElementById("status-box").innerHTML = "<h4>2 Active Properties Near You</h4>"
+          document.getElementById("status-box").innerHTML = "<h4>Results Disabled</h4>"
           document.getElementById("status-box").innerHTML += "<p>Click their markers to see more.</p>";
 
       } }, 3000);
