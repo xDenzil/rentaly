@@ -16,3 +16,15 @@
 <link rel="stylesheet" href="{{ URL::asset('assets/css/Navigation-with-Button.css') }}">
 <link rel="stylesheet" href="{{ URL::asset('assets/css/styles.css') }}">
 <script src="assets/js/markers.js"></script>
+
+<!-- Hotjar Tracking Code for https://rent-aly.herokuapp.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2054408,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
